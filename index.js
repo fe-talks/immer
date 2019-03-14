@@ -53,20 +53,6 @@ export const setElementVisibilityToImmer2Default = produce((state, id, visibilit
   itemsSettings: {}
 });
 
-export const setElementVisibilityToImmer3Default = produce((state, id, visibility) => {
-  if (!state.itemsSettings[id]) {
-    state.itemsSettings[id] = {};
-  }
-
-  if (state.itemsSettings[id].visible !== visibility) {
-    state.itemsSettings[id].visible = visibility;
-  }
-
-  return state;
-}, {
-  itemsSettings: {}
-});
-
 export const setElementVisibilityToImmerNonMod = produce((state, id, visibility) => {
   return 'some';
 }, {

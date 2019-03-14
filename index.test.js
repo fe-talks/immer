@@ -3,7 +3,6 @@ import {
   setElementVisibilityToImmer,
   setElementVisibilityToImmer2,
   setElementVisibilityToImmer2Default,
-  setElementVisibilityToImmer3Default,
   setElementVisibilityToImmerNonMod, setElementVisibilityToImmerNonMod2
 } from "./index";
 
@@ -77,7 +76,7 @@ describe('immutability test', () => {
     expect(newState.itemsSettings[2].visible).toBe(true);
   });
 
-  test('setElementVisibilityToImmer3Default should return new state', () => {
+  test('setElementVisibilityToImmer2Default should not return new state when no changes', () => {
     const state = {
       itemsSettings: {
         1: {
@@ -89,7 +88,7 @@ describe('immutability test', () => {
       }
     };
 
-    const newState = setElementVisibilityToImmer3Default(state, 2, false);
+    const newState = setElementVisibilityToImmer2Default(state, 2, false);
 
     expect(state === newState).toBe(true);
     expect(state.itemsSettings === newState.itemsSettings).toBe(true);
