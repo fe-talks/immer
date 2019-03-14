@@ -67,4 +67,16 @@ export const setElementVisibilityToImmer3Default = produce((state, id, visibilit
   itemsSettings: {}
 });
 
+export const setElementVisibilityToImmerNonMod = produce((state, id, visibility) => {
+  return 'some';
+}, {
+  itemsSettings: {}
+});
+
+export const setElementVisibilityToImmerNonMod2 = produce((state, id, visibility) => {
+  if (state === 'default') {
+    return 'some';
+  }
+}, 'default');
+
 // Immer zwraca dokladnie ten sam obiekt jesli nie byl modyfikowany!
